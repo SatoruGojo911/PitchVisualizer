@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+env/
+venv/
+
+# Secrets
+.env
+
+# Local Images (You don't want to upload your test generations)
+static/images/*.png
+
+# System
+.DS_Store

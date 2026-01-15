@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pitch Visualizer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .loader { display: none; }
+    </style>
+</head>
+<body class="bg-light">
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-body p-5">
+                    <h1 class="mb-4 text-center">The Pitch Visualizer</h1>
+                    <p class="text-muted text-center mb-4">Transform your customer success stories into visual storyboards instantly.</p>
+                    
+                    <form method="POST" onsubmit="showLoader()">
+                        <div class="mb-3">
+                            <label for="narrative" class="form-label fw-bold">Success Story / Narrative</label>
+                            <textarea class="form-control" id="narrative" name="narrative" rows="5" placeholder="Paste your text here (e.g., 'John struggled with manual data entry. He adopted our tool and saved 10 hours a week. Now his team is happy.')..." required></textarea>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="style" class="form-label fw-bold">Visual Style</label>
+                            <select class="form-select" id="style" name="style">
+                                <option value="Corporate Memphis vector art, flat design, vibrant colors">Corporate Vector (Tech Startup)</option>
+                                <option value="Cinematic photorealistic, dramatic lighting, 4k">Cinematic Photorealism</option>
+                                <option value="Hand-drawn sketch, black and white, pencil texture">Hand-drawn Sketch</option>
+                                <option value="Cyberpunk, neon lights, futuristic">Cyberpunk / Futuristic</option>
+                                <option value="Oil painting, impressionist style">Oil Painting</option>
+                            </select>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">Generate Storyboard</button>
+                        </div>
+                    </form>
+
+                    <div id="loader" class="loader text-center mt-4">
+                        <div class="spinner-border text-primary" role="status"></div>
+                        <p class="mt-2">Deconstructing narrative and dreaming up visuals...<br><small class="text-muted">(This may take 30-60 seconds)</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showLoader() {
+        document.getElementById('loader').style.display = 'block';
+    }
+</script>
+</body>
+</html>
